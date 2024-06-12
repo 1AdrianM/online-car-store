@@ -13,7 +13,10 @@ import { ProductService } from '../../Service/Product/product.service';
 export class ProductReviewComponent implements OnInit{
   products!: Product[] 
   id!:string;
-  constructor(private ActivateRoute:ActivatedRoute, private prodServicee:ProductService){}
+  constructor(private ActivateRoute:ActivatedRoute, private prodServicee:ProductService){
+    this.prodServicee.GetProductById(this.id)
+this.prodServicee.GetProduct()
+  }
   
   ngOnInit(): void {
       this.ActivateRoute.params.subscribe(params=>{
