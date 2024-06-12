@@ -1,0 +1,15 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+
+}
+img{
+object-fit: cover;
+}
+.border--b{
+    border-bottom: 0.2px solid black;
+    padding-bottom: 2rem;
+}
