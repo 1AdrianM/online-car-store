@@ -17,5 +17,7 @@ products: Product[]
 constructor(private productService: ProductService, private router: Router) {
   this.products = this.productService.GetProduct();
 }
-
+PreviewProduct(id:string){
+  this.router.navigate(["/product", id]);
+}
 }

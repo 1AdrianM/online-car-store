@@ -5,6 +5,7 @@ export interface Product{
     Model:string;
     type:string;
     description:string;
-  price:number;
+    price:number;
     Bought: boolean;
+    Quantity:number;
   }
