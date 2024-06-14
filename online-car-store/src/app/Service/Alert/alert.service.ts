@@ -6,6 +6,16 @@ import Swal from 'sweetalert2'
 export class AlertService {
 
   constructor() { }
+  SuccessAlert(title:string, text:string){
+    return Swal.fire(
+    {
+      icon:"success",
+      title:title,
+      text:text
+    }
+    )
+
+  }
 QuestionAlert(title:string, text:string, ConfirmButtonText:string,
   CancelButtonText:string
 ){

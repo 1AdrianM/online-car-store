@@ -1,7 +1,7 @@
 import { Component, inject, Input } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { Product } from '../../interface/IProduct';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { ProductService } from '../../Service/Product/product.service';
 import { CommonModule } from '@angular/common';
 import { AlertService } from '../../Service/Alert/alert.service';
@@ -15,7 +15,7 @@ import { AlertService } from '../../Service/Alert/alert.service';
 export class ProductReviewComponent implements OnInit{
   product: Product | undefined;
   id!: any;
-  constructor(private ActivateRoute:ActivatedRoute, private prodServicee:ProductService) {
+  constructor(private ActivateRoute:ActivatedRoute, private prodServicee:ProductService,  private route: Router) {
 
   } 
   private alertService = inject(AlertService);
@@ -32,8 +32,10 @@ export class ProductReviewComponent implements OnInit{
 @Input()
 AddProduct()
 {  if(this.product){
-  this.alertService.QuestionAlert("Listo para comprar","Estas quieres comprar estos","Agregar","no lo quiero")
 this.product.Bought = true;
+this.alertService.SuccessAlert("Añadido","Producto Añadido al Carrito")
+ this.route.navigate(["/products"])
+
 }
 }  
 
