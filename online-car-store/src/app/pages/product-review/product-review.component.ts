@@ -12,10 +12,10 @@ import { ProductService } from '../../Service/Product/product.service';
 })
 export class ProductReviewComponent implements OnInit{
   products!: Product[] 
-  id!:string;
+  id!:  any;
   constructor(private ActivateRoute:ActivatedRoute, private prodServicee:ProductService){
     this.prodServicee.GetProductById(this.id)
-this.prodServicee.GetProduct()
+    this.products = this.prodServicee.GetProduct()
   }
   
   ngOnInit(): void {

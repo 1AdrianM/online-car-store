@@ -1,1 +1,12 @@
-<p>product-review works!</p>
+<div class="row" *ngIf="!products; else main_content">
+    <p class="">...Loading</p>
+</div>
+<ng-template #main_content>
+<div class="row">
+    <div class="col">
+        <img [src]="products.image" alt="Klk"/>
+        <p class="">{{products.Brand}}</p>
+    </div>
+</div>
+
+</ng-template>
