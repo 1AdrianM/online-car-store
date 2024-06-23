@@ -1,0 +1,39 @@
+/* Landing page styles */
+section {
+    padding: 60px 0;
+  }
+  
+  h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+  }
+  
+  p.lead {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+  }
+  
+  .btn-lg {
+    font-size: 1.25rem;
+    padding: 10px 20px;
+  }
+  
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+  
+    p.lead {
+      font-size: 1rem;
+    }
+  
+    .btn-lg {
+      font-size: 1rem;
+    }
+  }
+  

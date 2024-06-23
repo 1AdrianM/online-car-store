@@ -32,7 +32,7 @@ export class ProductReviewComponent implements OnInit{
 @Input()
 AddProduct()
 {  if(this.product){
-this.product.Bought = true;
+this.product.AddedToCart = true;
 this.alertService.SuccessAlert("Añadido","Producto Añadido al Carrito")
  this.route.navigate(["/products"])
 

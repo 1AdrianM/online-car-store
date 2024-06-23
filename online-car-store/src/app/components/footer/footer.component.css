@@ -1,1 +1,29 @@
- 
+ .icons{
+display:flex;
+gap:1rem;
+    font-size:2rem;
+color:white;
+}
+.fb-theme:hover{
+    background-color:#1877F2;
+
+}
+.ig-theme:hover{
+    background: linear-gradient(to right, #f9ce34, #ee2a7b , #6228d7);
+}
+.tw-theme:hover{
+    background-color:#1DA1F2;
+
+}
+.ind-theme:hover{
+background-color: #0077b5
+}
+.fb-theme,.ig-theme,
+.tw-theme,.ind-theme{
+display:flex-inline;
+flex-direction: column;
+gap:1.25rem;
+    font-size:2rem;
+    padding:20px;
+
+}

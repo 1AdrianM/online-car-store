@@ -14,11 +14,19 @@ import { RouterModule } from '@angular/router';
 })
 export class CartComponent implements OnInit {
 Products_cart: Product[] = [];
+total:  number = 0;
 private productService = inject(ProductService);
 private alert =  inject(AlertService);
 ngOnInit(): void {
     this.Products_cart= this.productService.GetCartList()
-}
+  this.CalculateTotal() 
+  }
+   CalculateTotal():void{
+this.total=  this.Products_cart.reduce((total,product)=>{
+
+  return total +(product.price*(product.Quantity||1))
+},0)
+   }
 IncreaseQuantity(product:Product): void{
   if(product.Quantity){
 
@@ -30,10 +38,15 @@ DecreaseQuantity(product:Product):void{
     product.Quantity--;
   }
 }
-RemoveProduct(product:  Product){
+RemoveProduct(product: Product){
 if(this.Products_cart){
   this.alert.QuestionAlert("Removiendo Producto","Estas Seguro que Quieres eliminar este Producto de tu Carrito", "Si","Cancelar")
 this.Products_cart= this.Products_cart.filter(p=> p != product)
+}}
+Purchase():boolean{
+  if(this.Products_cart){
+this.alert.SuccessAlert("PAGO ADMINISTRADO", "Su pago ha sido realizado")
+this.Products_cart=[]
 }
-}
+return  false;}
 }

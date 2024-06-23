@@ -6,6 +6,7 @@ export interface Product{
     type:string;
     description:string;
     price:number;
+    AddedToCart:boolean;
     Bought: boolean;
     Quantity:number;
   }
